@@ -6,13 +6,11 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "lot_statuses")
+public class LotStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
+    @Column(name = "status_id")
     private Long id;
     private String name;
-    private String login;
-    private String pwd;
 }

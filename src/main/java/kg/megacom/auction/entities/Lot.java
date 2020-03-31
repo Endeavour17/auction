@@ -1,6 +1,5 @@
 package kg.megacom.auction.entities;
 
-import kg.megacom.auction.enums.Status;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,13 +14,16 @@ public class Lot {
     @Column(name = "lot_id")
     private Long id;
     private String name;
-    @Column(name = "min_cost")
-    private double minCost;
-    @Column(name = "buyout_cost")
-    private double buyoutCost;
-    private double step;
+    @Column(name = "start_date")
+    private Date startDate;
     @Column(name = "end_date")
     private Date endDate;
-    @Column(name = "status")
-    private Status status;
+    @Column(name = "min_price")
+    private double minPrice;
+    @Column(name = "max_price")
+    private double maxPrice;
+    private double step;
+    @ManyToOne
+    @JoinColumn(name = "status_id")
+    private LotStatus lotStatus;
 }
